@@ -1,0 +1,14 @@
+---
+description: Cursor adapter — follow AGENTS.md (Dependency Rule)
+globs: app/**/*.{vue,ts},shared/**/*.ts,server/**/*.ts,layers/**/*.{vue,ts}
+---
+
+# Architecture (adapter)
+
+**Primary source:** [`AGENTS.md`](../../AGENTS.md). Follow it for any coding agent.
+
+- Direction: `pages` → `components` → `composables` → repository port → infra
+- Components must not `$fetch` or import adapters
+- Composables use `useAsyncData` + injected `CatalogRepository`
+- Nitro BFF: DTO + private runtimeConfig only
+- Prefer docs in `docs/` over growing the proof app

@@ -1,0 +1,13 @@
+---
+description: Cursor adapter — AGENTS.md wins; no secrets
+alwaysApply: true
+---
+
+# Safe edits (adapter)
+
+**Primary source:** [`AGENTS.md`](../../AGENTS.md).
+
+- Do not commit `.env`, tokens, or secrets
+- `runtimeConfig.public` is visible to the browser
+- KISS/YAGNI: density in `docs/`, not extra frameworks
+- On conflict, AGENTS.md wins
