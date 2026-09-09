@@ -1,0 +1,29 @@
+# Nuxt Layered Architecture Guide
+
+> Staff-grade RAG corpus for coding agents working on Nuxt layered architecture (Dependency Rule, repository port, Nitro BFF). Code is a thin proof.
+
+## Start here
+
+- [AGENTS.md](AGENTS.md): Agent contract (stack, Dependency Rule, do/don't, commands)
+- [docs/INDEX.md](docs/INDEX.md): Retrieval map — every doc with a one-line summary
+- [README.md](README.md): How to run the proof app
+
+## Docs
+
+- [Architecture](docs/architecture.md): pages → components → composables → repository → infra
+- [Repository pattern](docs/repository-pattern.md): Port–Adapter, DTO⇄model, factory, typed Result
+- [BFF via Nitro](docs/bff-nitro.md): one `server/api` route, private runtimeConfig
+- [SSR data fetching](docs/ssr-data-fetching.md): useAsyncData + repository, hydration
+- [MFE and team topology](docs/mfe-and-team-topology.md): Nuxt Layer sketch; Host / Feature / Platform
+- [Practices](docs/practices.md): Clean Code, SRP, KISS/YAGNI, light AppSec
+- [Prompts](docs/prompts.md): Ready-made prompts for agents
+- [Impact cases](docs/impact-cases.md): Anonymized before/after leverage stories
+- [References](docs/references.md): Curated public links only
+
+## Proof code
+
+- `app/pages/index.vue` — composition root
+- `app/composables/useCatalog.ts` — useAsyncData + port
+- `shared/catalog/` — port, factory, mapper, memory/http adapters
+- `server/api/catalog.get.ts` — Nitro BFF
+- `layers/platform/` — layer sketch (`PlatformBadge`)
